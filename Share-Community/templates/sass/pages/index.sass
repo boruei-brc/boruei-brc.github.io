@@ -1,0 +1,31 @@
+@import compass
+@import helpers/variables
+@import base/reset
+@import helpers/mixins
+@import helpers/extends
+@import layout/header
+
+// 平台數據
+@import components/website-data-component
+// 限時動態
+@import components/newsfeed-story-component
+// 動態元件-文章排名
+@import components/newsfeed-ranking-component
+// 動態元件-文章列表
+@import components/newsfeed-list-component
+// 動態元件-動態格線版型
+@import components/newsfeed-grid-component
+
+.template-block__section
+	width: 100%
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	margin: 10px 0
+
+.template-block__section-header
+	width: 100%
+
+.template-block__section-content
+	width: 100%
+	display: flex

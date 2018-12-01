@@ -1,0 +1,103 @@
+.user-advanced-component
+	width: 292.5px
+	background-color: #FFFFFF
+	+border-radius(5px)
+	box-sizing: border-box
+	margin: 5px
+	padding: 15px
+
+.user-advanced__owner
+	margin-bottom: 5px
+	display: flex
+
+.user-advanced__owner-avatar
+	width: 70px
+	height: 70px
+	background-image: url(../../../images/public/personal_avatar_01.jpg)
+	@extend %backgroundImageStyle
+	+border-radius(50%)
+	margin-right: 15px
+
+.user-advanced__owner-info
+	width: calc(100% - 85px)
+
+.user-advanced__owner-account
+	font-size: 16px
+	@extend %textEllipsisSingleRow
+
+.user-advanced__owner-from
+	color: $minor_fontColor
+	font-size: 12px
+	@extend %textEllipsisSingleRow
+	&::before
+		+iconPseudoElement(12.5px,12.5px,'public','location','png')
+		margin: 2.5px 3px 2.5px -1px
+		float: left
+
+.user-advanced__follow-btn
+	width: 100%
+	background: rgba(79,183,131,1)
+	border: none
+	+border-radius(3px)
+	color: #FFFFFF
+	font-size: 12px
+	@extend %textEllipsisSingleRow
+	padding: 2px 10px
+	margin-top: 7px
+	&:hover
+		background: rgba(79,183,131,0.85)
+
+.user-advanced__data
+	padding: 5px 0
+	ul
+		display: flex
+		li
+			width: 33.33%
+			font-size: 12px
+			text-align: center
+			span
+				display: block
+				&:first-child
+					color: $base_fontColor
+				&:last-child
+					color: $minor_fontColor
+		hr
+			width: 1px
+			height: 24px
+			background-color: #DEDEDE
+			border: none
+			display: inline-block
+
+.user-advanced__slide
+	width: 100%
+	height: 87.5px
+	overflow: hidden
+	position: relative
+	ul
+		position: absolute
+		top: 0
+		left: 0
+		display: flex
+		li
+			display: flex
+
+.user-advanced__post-photo
+	width: 77.5px
+	height: 77.5px
+	background-image: url(../../../images/public/personal_avatar_01.jpg)
+	@extend %backgroundImageStyle
+	+border-radius(5px)
+	margin: 5px
+
+.user-advanced__paging
+	ul
+		display: flex
+		justify-content: center
+		li
+			width: 5px
+			height: 5px
+			background-color: #CECECE
+			+border-radius(50%)
+			margin: 0 1px
+		.user-advanced__paging-active
+			background-color: #827979

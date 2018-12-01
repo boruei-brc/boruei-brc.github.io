@@ -1,0 +1,252 @@
+.newsfeed-lightbox__fade-screen
+	width: 100%
+	height: 100%
+	background: rgba(0,0,0,.75)
+	color: #FFFFFF
+	overflow-y: auto
+	position: fixed
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	display: none
+
+.newsfeed-lightbox__body
+	width: 830px
+	height: 420px
+	background: rgba(0,0,0,.5)
+	+border-radius(5px)
+	box-sizing: border-box
+	margin: 60px auto
+	padding: 10px
+	position: relative
+	display: flex
+
+.newsfeed-lightbox__photo
+	width: 400px
+	height: 400px
+	background-image: url(../../../images/public/personal_avatar_01.jpg)
+	@extend %backgroundImageStyle
+	+border-radius(5px)
+	margin-right: 10px
+
+.newsfeed-lightbox__details
+	width: 400px
+	height: 400px
+	background: rgba(255,255,255,.15)
+	+border-radius(5px)
+	box-sizing: border-box
+	padding: 10px
+
+.newsfeed-lightbox__control
+	background: rgba(0,0,0,.5)
+	+border-radius(17.5px)
+	padding: 10px 15px
+	position: absolute
+	right: 0
+	bottom: -45px
+	display: flex
+	button
+		height: 15px
+		border: none
+		background-color: transparent
+		@extend %backgroundImageStyle
+		padding: 0
+	#newsfeed-lightbox__prev-btn
+		width: 10px
+		background-image: url(../../../images/public/lightbox_prev_icon.png)
+		margin-right: 5px
+	#newsfeed-lightbox__next-btn
+		width: 10px
+		background-image: url(../../../images/public/lightbox_next_icon.png)
+		margin-left: 5px
+	#newsfeed-lightbox__close-btn
+		width: 15px
+		background-image: url(../../../images/public/lightbox_close_icon.png)
+	hr
+		width: 1px
+		height: 15px
+		background: rgba(255,255,255,.25)
+		border: none
+		margin: 0 10px
+
+
+
+
+// owner 組件
+.newsfeed-lightbox__owner
+	display: flex
+
+.newsfeed-lightbox__owner-avatar
+	width: 40px
+	height: 40px
+	background-image: url(../../../images/public/personal_avatar_01.jpg)
+	@extend %backgroundImageStyle
+	+border-radius(50%)
+	margin-right: 10px
+
+.newsfeed-lightbox__owner-info
+	width: calc(100% - 50px)
+
+.newsfeed-lightbox__owner-info-row
+	display: flex
+	justify-content: space-between
+	align-items: center
+
+.newsfeed-lightbox__owner-account
+	color: #FFFFFF
+	font-size: 15px
+
+.newsfeed-lightbox__post-time
+	color: $minor_fontColor
+	font-size: 12px
+
+.newsfeed-lightbox__post-location
+	color: $base_linkFontColor
+	font-size: 12px
+	display: inline-flex
+	&::before
+		+iconPseudoElement(13px,13px,'public','lightbox_newsfeed_location_icon','png')
+		margin: 2px 3px 2px -2px
+// owner 組件
+
+.newsfeed-lightbox__content
+	height: calc(100% - 120px)
+	border-top: 1px solid rgba(255,255,255,.25)
+	border-bottom: 1px solid rgba(255,255,255,.25)
+	box-sizing: border-box
+	overflow-y: auto
+	margin: 10px 0
+	
+// post 組件
+.newsfeed-lightbox__post
+	padding: 5px 0
+
+.newsfeed-lightbox__post-text
+	padding: 5px 0
+
+.newsfeed-lightbox__post-tags
+	font-size: 12px
+	padding: 3px 0
+	a
+		background-color: $tag_backgroundColor
+		color: #FFFFFF
+		+border-radius(12px)
+		margin: 2px 0
+		padding: 3px 8px
+		display: inline-flex
+		align-items: center
+		&::before
+			+iconPseudoElement(12px,12px,'public','lightbox_newsfeed_tag_icon','png')
+			margin-right: 3px
+// post 組件
+
+// messages 組件
+.newsfeed-lightbox__messages
+	border-top: 1px solid rgba(255,255,255,.15)
+	padding: 5px 0
+
+.newsfeed-lightbox__count-section
+	font-size: 12px
+	padding: 5px 0
+	display: flex
+
+.newsfeed-lightbox__display-messages-btn
+	background-color: transparent
+	border: none
+	color: #FFFFFF
+	margin-left: 15px
+	padding: 0
+	display: flex
+	&::after
+		+iconPseudoElement(10px,10px,'public','lightbox_newsfeed_dropdown_icon','png')
+		margin: 4px
+
+.newsfeed-lightbox__message-scope
+	border-bottom: 1px solid rgba(255,255,255,.15)
+	padding: 10px 0
+	display: flex
+	flex-wrap: wrap
+	&:last-child
+		border-bottom: none
+
+.newsfeed-lightbox__reply-this-post
+	width: 100%
+
+.newsfeed-lightbox__reply-this-message
+	width: calc(100% - 30px)
+	margin-left: auto
+// messages 組件
+
+// reply 留言組件
+.newsfeed-lightbox__reply-owner
+	padding-top: 10px
+	.newsfeed-lightbox__reply-avatar
+		width: 24px
+		height: 24px
+
+.newsfeed-lightbox__reply-row
+	display: flex
+	align-items: center
+
+.newsfeed-lightbox__reply-avatar
+	width: 30px
+	height: 30px
+	background-image: url(../../../images/public/personal_avatar_01.jpg)
+	@extend %backgroundImageStyle
+	+border-radius(50%)
+	margin-right: 8px
+
+.newsfeed-lightbox__reply-account
+	font-size: 12px
+
+.newsfeed-lightbox__reply-text
+	background-color: $base_backgroundColor
+	+border-radius(12px)
+	color: $base_fontColor
+	font-size: 12px
+	margin-left: 30px
+	padding: 3px 10px
+// reply 留言組件
+
+// 控制組件
+.newsfeed-lightbox__operate-row
+	display: flex
+	button
+		background-color: transparent
+		border: none
+		padding: 0
+		&:first-child
+			margin-right: 15px
+		span
+			color: #FFFFFF
+			font-size: 12px
+			display: flex
+			align-items: center
+			&::before
+				margin-right: 5px
+
+.newsfeed-lightbox__like-btn
+	span
+		&::before
+			+iconPseudoElement(20px,20px,'public','lightbox_newsfeed_like_icon','png')
+
+.newsfeed-lightbox__edit-message-btn
+	span
+		&::before
+			+iconPseudoElement(20px,20px,'public','lightbox_newsfeed_message_icon','png')
+
+#newsfeed-lightbox__message
+	width: 100%
+	height: 30px
+	background-color: rgba(0,0,0,.35)
+	border: none
+	+border-radius(5px)
+	color: #FFFFFF
+	font-size: 12px
+	box-sizing: border-box
+	margin-top: 10px
+	padding: 5px
+	outline: none
+	resize: none
+// 控制組件

@@ -1,0 +1,29 @@
+.newsfeed-story-component
+	background-color: #FFFFFF
+	+border-radius(3px)
+	text-align: center
+	box-sizing: border-box
+	margin: 5px
+	padding: 20px
+
+.newsfeed-story__read-status
+	background-color: #FFFFFF
+	border: 3px solid #C45670
+	+border-radius(50%)
+	padding: 3px
+	cursor: pointer
+
+.newsfeed-story__owner-avatar
+	width: 65px
+	height: 65px
+	background-image: url(../../../images/public/personal_avatar_01.jpg)
+	@extend %backgroundImageStyle
+	+border-radius(50%)
+	margin: 0 auto
+
+.newsfeed-story__owner-account
+	font-size: 12px
+	line-height: 1
+	@extend %textEllipsisSingleRow
+	margin-top: 10px
+	cursor: default

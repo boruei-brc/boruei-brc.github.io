@@ -1,0 +1,15 @@
+@mixin iconPseudoElement ($width,$height,$folderPath,$fileName,$fileType)
+	content: ''
+	width: $width
+	height: $height
+	background-image: url('../../../images/#{$folderPath}/#{$fileName}.#{$fileType}')
+	background-size: contain
+	background-position: center
+	background-repeat: no-repeat
+
+@mixin textEllipsisMultipleRows ($lineClamp)
+	overflow: hidden
+	word-wrap: break-word
+	display: -webkit-box
+	-webkit-box-orient: vertical
+	-webkit-line-clamp: $lineClamp

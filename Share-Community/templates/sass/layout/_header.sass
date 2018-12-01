@@ -1,0 +1,101 @@
+header
+	width: 100%
+	background-color: #FFFFFF
+	padding: 10px 0
+
+.header__Share-Community-Logo
+	width: 180px
+	a
+		display: block
+		img
+			vertical-align: top
+
+.header__nav-section
+	display: flex
+
+.header__functons
+	ul
+		display: flex
+		li
+			padding: 0 15px
+			a
+				color: #A59D9D
+				font-size: 13px
+				line-height: 1
+				margin: 2px 0
+				display: block
+				+transition(all .15s)
+				&::before
+					content: ''
+					width: 20px
+					height: 20px
+					background-size: contain
+					background-position: center
+					background-repeat: no-repeat
+					margin: 0 auto 4px
+					display: block
+					+transition(all .15s)
+				&:hover
+					color: #827979
+
+// 搜尋
+#header__functons-search
+	&::before
+		background-image: url(../../../images/public/search_icon.png)
+	&:hover
+		&::before
+			background-image: url(../../../images/public/search_icon_active.png)
+
+// 探索
+#header__functons-explore
+	&::before
+		background-image: url(../../../images/public/explore_icon.png)
+	&:hover
+		&::before
+			background-image: url(../../../images/public/explore_icon_active.png)
+
+// 通知
+#header__functons-notifications
+	&::before
+		background-image: url(../../../images/public/notifications_icon.png)
+	&:hover
+		&::before
+			background-image: url(../../../images/public/notifications_icon_active.png)
+
+// 動態消息
+#header__functons-newsfeed
+	&::before
+		background-image: url(../../../images/public/newsfeed_icon.png)
+	&:hover
+		&::before
+			background-image: url(../../../images/public/newsfeed_icon_active.png)
+
+// 追蹤請求
+#header__functons-requests
+	&::before
+		background-image: url(../../../images/public/requests_icon.png)
+	&:hover
+		&::before
+			background-image: url(../../../images/public/requests_icon_active.png)
+
+.header__profile
+	a
+		display: flex
+		+align-items(center)
+	&:hover
+		.header__profile-account
+			color: #827979
+
+.header__profile-avatar
+	width: 41px
+	height: 41px
+	background-image: url(../../../images/public/personal_avatar_01.jpg)
+	background-size: cover
+	background-position: center
+	background-repeat: no-repeat
+	+border-radius(50%)
+	margin-right: 10px
+
+.header__profile-account
+	color: #A59D9D
+	+transition(all .15s)

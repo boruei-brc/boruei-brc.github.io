@@ -1,0 +1,129 @@
+.newsfeed-list-component
+	width: 795px
+	background-color: #FFFFFF
+	+border-radius(3px)
+	box-sizing: border-box
+	margin: 10px 0
+	padding: 5px
+	display: flex
+
+// 主要項目
+.newsfeed-list__main-item
+	width: 325px
+	margin: 5px
+	.newsfeed-list__cover
+		width: 100%
+		height: 325px
+		+border-radius(3px)
+		overflow: hidden
+		position: relative
+		.newsfeed-list__cover-nav
+			a
+				&::before
+					margin-right: 10px
+	.newsfeed-list__post-details
+		margin-top: 5px
+		.newsfeed-list__article-title
+			height: 42px
+			+textEllipsisMultipleRows(2)
+		.newsfeed-list__article-desc
+			height: 54px
+			margin: 3px 0
+			+textEllipsisMultipleRows(3)
+
+// 次要項目
+.newsfeed-list__minor-item
+	width: 450px
+	box-sizing: border-box
+	padding: 5px
+	display: flex
+	flex-wrap: wrap
+	.newsfeed-list__cover
+		width: 105px
+		height: 105px
+		+border-radius(3px)
+		overflow: hidden
+		margin-right: 10px
+		position: relative
+	.newsfeed-list__post-details
+		width: calc(100% - 115px)
+		.newsfeed-list__article-title
+			@extend %textEllipsisSingleRow
+		.newsfeed-list__article-desc
+			height: 36px
+			margin: 2px 0
+			+textEllipsisMultipleRows(2)
+
+// 主要項目 Hover
+.newsfeed-list__main-item
+	&:hover
+		.newsfeed-list__cover-photo
+			+filter(blur(5px))
+		.newsfeed-list__cover-nav
+			opacity: 1
+			visibility: visible
+
+// 次要項目 Hover
+.newsfeed-list__minor-item
+	&:hover
+		.newsfeed-list__cover-photo
+			+filter(blur(2.5px))
+		.newsfeed-list__cover-nav
+			opacity: 1
+			visibility: visible
+
+.newsfeed-list__cover-photo
+	width: 100%
+	height: 100%
+	background-image: url(../../../images/public/personal_avatar_01.jpg)
+	@extend %backgroundImageStyle
+	+transition(all .35s)
+
+.newsfeed-list__cover-nav
+	width: 100%
+	height: 100%
+	background: rgba(0,0,0,.45)
+	position: absolute
+	top: 0
+	left: 0
+	+transition(all .35s)
+	opacity: 0
+	visibility: hidden
+	a
+		width: 100%
+		height: 100%
+		color: #FFFFFF
+		font-size: 16px
+		display: flex
+		justify-content: center
+		align-items: center
+		&::before
+			+iconPseudoElement(30px,30px,'public','view_article_icon','png')
+
+.newsfeed-list__article-desc
+	color: $minor_fontColor
+	font-size: 12px
+
+.newsfeed-list__post-info
+	font-size: 12px
+	display: flex
+	li
+		&:first-child
+			display: inline-flex
+			align-items: center
+			&::after
+				content: ''
+				width: 2px
+				height: 2px
+				background-color: $base_fontColor
+				margin: 0 5px
+
+.newsfeed-list__post-location
+	color: $base_linkFontColor
+	display: inline-flex
+	&::before
+		+iconPseudoElement(13px,13px,'public','lightbox_newsfeed_location_icon','png')
+		margin: 2px 2px 2px -2px
+
+.newsfeed-list__views
+	color: $base_fontColor

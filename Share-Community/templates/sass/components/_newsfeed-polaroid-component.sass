@@ -1,0 +1,162 @@
+.newsfeed-polaroid-component
+	width: 292.5px
+	background-color: #FFFFFF
+	+border-radius(5px)
+	box-sizing: border-box
+	margin: 5px
+	padding: 10px
+	float: left
+	&:hover
+		.newsfeed-polaroid__cover-info
+			opacity: 0
+			visibility: hidden
+		.newsfeed-polaroid__cover-photo
+			+filter(blur(5px))
+		.newsfeed-polaroid__cover-nav
+			opacity: 1
+			visibility: visible
+
+.newsfeed-polaroid__cover
+	width: 100%
+	height: 265px
+	+border-radius(5px)
+	overflow: hidden
+	position: relative
+
+.newsfeed-polaroid__cover-photo
+	width: 100%
+	height: 100%
+	background-image: url(../../../images/public/personal_avatar_01.jpg)
+	@extend %backgroundImageStyle
+	+border-radius(5px)
+	+transition(all .35s)
+
+.newsfeed-polaroid__cover-info
+	width: 100%
+	color: #FFFFFF
+	font-size: 12px
+	box-sizing: border-box
+	padding: 10px
+	position: absolute
+	bottom: 0
+	left: 0
+	+transition(all .35s)
+	ul
+		display: flex
+		li
+			background: rgba(0,0,0,.3)
+			+border-radius(5px)
+			box-sizing: border-box
+			padding: 10px
+			// display: flex
+			&::before
+				display: block
+		.newsfeed-polaroid__type-basic
+			margin-right: 10px
+			&::before
+				+iconPseudoElement(16px,16px,'public','newsfeed_type_basic','png')
+		.newsfeed-polaroid__type-article
+			margin-right: 10px
+			&::before
+				+iconPseudoElement(16px,16px,'public','newsfeed_type_article','png')
+		.newsfeed-polaroid__post-location
+			width: calc(100% - 46px)
+			line-height: 16px
+			@extend %textEllipsisSingleRow
+			&::before
+				+iconPseudoElement(16px,16px,'public','location_icon','png')
+				margin-right: 5px
+				float: left
+
+.newsfeed-polaroid__cover-nav
+	width: 100%
+	height: 100%
+	background: rgba(0,0,0,.45)
+	+border-radius(5px)
+	position: absolute
+	top: 0
+	left: 0
+	+transition(all .35s)
+	opacity: 0
+	visibility: hidden
+	ul
+		width: calc(100% - 20px)
+		background: rgba(0,0,0,.25)
+		+border-radius(5px)
+		box-sizing: border-box
+		padding: 10px
+		position: absolute
+		bottom: 10px
+		left: 10px
+		display: flex
+		li
+			width: 100%
+			color: #FFFFFF
+			font-size: 12px
+			text-align: center
+			line-height: 16px
+			display: flex
+			justify-content: center
+			&:first-child
+				border-right: 1px solid #FFFFFF
+				span
+					margin: 0 5px
+					display: flex
+					&:before
+						margin-right: 5px
+
+.newsfeed-polaroid__like
+	&::before
+		+iconPseudoElement(16px,16px,'public','like_icon','png')
+
+.newsfeed-polaroid__message
+	&::before
+		+iconPseudoElement(16px,16px,'public','message_icon','png')
+
+.newsfeed-polaroid__rise-rank
+	&::before
+		+iconPseudoElement(16px,16px,'public','rise_rank_icon','png')
+
+.newsfeed-polaroid__view-basic,
+.newsfeed-polaroid__view-article
+	cursor: pointer
+	display: flex
+	&::before
+		margin-right: 5px
+
+.newsfeed-polaroid__view-basic
+	&::before
+		+iconPseudoElement(16px,16px,'public','view_basic_icon','png')
+
+.newsfeed-polaroid__view-article
+	&::before
+		+iconPseudoElement(16px,16px,'public','view_article_icon','png')
+
+// 動態 - 個人頭像＆帳號名稱
+.newsfeed-polaroid__owner
+	font-size: 12px
+	margin-top: 10px
+	display: flex
+	align-items: center
+
+.newsfeed-polaroid__owner-avatar
+	width: 30px
+	height: 30px
+	background-image: url(../../../images/public/personal_avatar_01.jpg)
+	@extend %backgroundImageStyle
+	+border-radius(50%)
+	margin-right: 10px
+
+// 文章 - 文章標題＆文章敘述
+.newsfeed-polaroid__article-info
+	margin-top: 10px
+
+.newsfeed-polaroid__article-title
+	@extend %textEllipsisSingleRow
+
+.newsfeed-polaroid__article-desc
+	height: 36px
+	color: $minor_fontColor
+	font-size: 12px
+	margin-top: 5px
+	+textEllipsisMultipleRows(2)

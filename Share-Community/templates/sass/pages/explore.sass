@@ -1,0 +1,33 @@
+@import compass
+@import helpers/variables
+@import base/reset
+@import helpers/mixins
+@import helpers/extends
+@import layout/header
+
+// 用戶元件-基本
+@import components/user-basic-component
+// 用戶元件-進階
+@import components/user-advanced-component
+// 動態元件-拍立得
+@import components/newsfeed-polaroid-component
+// 跳窗元件-動態
+@import layout/lightbox-newsfeed
+
+.template-block__section
+	padding: 5px 0
+
+.template-block__section-header
+	padding: 5px 10px
+	display: flex
+	justify-content: space-between
+
+.template-block__section-more
+	a
+		color: $base_linkFontColor
+		font-size: 12px
+
+.template-block__section-content
+	display: flex
+	flex-wrap: wrap
+	margin: 0 -5px

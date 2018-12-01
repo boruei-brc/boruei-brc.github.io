@@ -1,0 +1,67 @@
+.newsfeed-ranking-component
+	width: 395px
+	background-color: #FFFFFF
+	+border-radius(3px)
+	margin: 10px 0
+	a
+		padding: 10px
+		display: flex
+
+.newsfeed-ranking__rank
+	width: 40px
+	height: 50px
+	background-color: #4fb783
+	+border-radius(3px)
+	color: #FFFFFF
+	font-size: 12px
+	line-height: 1
+	box-sizing: border-box
+	padding: 10px
+	display: flex
+	flex-wrap: wrap
+	justify-content: center
+	align-content: space-between
+	&::before
+		+iconPseudoElement(12px,12px,'public','rise_rank_icon','png')
+
+.newsfeed-ranking__cover-photo
+	width: 50px
+	height: 50px
+	background-image: url(../../../images/public/personal_avatar_01.jpg)
+	@extend %backgroundImageStyle
+	+border-radius(3px)
+	margin: 0 10px
+
+.newsfeed-ranking__post-details
+	width: calc(100% - 110px)
+	display: flex
+	flex-wrap: wrap
+	align-items: center
+
+.newsfeed-ranking__article-title
+	@extend %textEllipsisSingleRow
+
+.newsfeed-ranking__post-info
+	width: 100%
+	font-size: 12px
+	display: inline-flex
+	li
+		&:first-child
+			display: inline-flex
+			align-items: center
+			&::after
+				content: ''
+				width: 2px
+				height: 2px
+				background-color: $minor_fontColor
+				margin: 0 5px
+
+.newsfeed-ranking__post-location
+	color: $base_linkFontColor
+	display: inline-flex
+	&::before
+		+iconPseudoElement(13px,13px,'public','lightbox_newsfeed_location_icon','png')
+		margin: 2px 2px 2px -2px
+
+.newsfeed-ranking__views
+	color: $minor_fontColor
