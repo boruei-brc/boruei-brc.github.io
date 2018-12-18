@@ -1,16 +1,16 @@
 {
-	status: true,
-	businessAds: {
-		large: [
+	"status": true,
+	"businessAds": {
+		"large": [
 			{
-				folderPath: '../images/ads',
-				fileName: 'banner_01',
-				fileType: '.jpg'
+				"folderPath": "../images/ads",
+				"fileName": "banner_01",
+				"fileType": ".jpg"
 			},
 			{
-				folderPath: '../images/ads',
-				fileName: 'banner_02',
-				fileType: '.jpg'
+				"folderPath": "../images/ads",
+				"fileName": "banner_02",
+				"fileType": ".jpg"
 			}
 		]
 	}
